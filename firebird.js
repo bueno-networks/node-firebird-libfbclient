@@ -1,4 +1,4 @@
-var binding = require("./build/Release/binding");
+var binding = require("bindings")('binding.node');
 var stream = require("stream");
 var util = require("util");
 var events = require('events');
