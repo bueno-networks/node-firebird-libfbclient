@@ -1,4 +1,10 @@
-var binding = require("bindings")('binding.node');
+let mode = process.env ? process.env.NODE_ENV : undefined;
+var binding;
+if(mode !== undefined && mode === "development"){
+  binding = require("./build/Release/binding.node");
+}else{
+  binding = require("bindings")('binding.node');
+}
 var stream = require("stream");
 var util = require("util");
 var events = require('events');
